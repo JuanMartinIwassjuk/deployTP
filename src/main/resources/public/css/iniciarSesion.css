@@ -1,0 +1,109 @@
+*{
+    padding:0;
+    margin:0;
+}
+h1{
+    text-align: center;
+    background-color: rgb(95, 141, 78);
+    color: rgb(229, 217, 182);
+    padding: 20px;
+}
+
+#espacio{
+    background-color: rgb(229, 217, 182);
+    color: rgb(229, 217, 182);
+}
+
+body{
+    /*background-image:url('https://i0.wp.com/medioambienteynaturaleza.com/wp-content/uploads/2015/06/Fondos-de-pantalla-de-paisajes-naturales23.jpg?fit=1920%2C1080&ssl=1');*/
+    background-color: rgb(229, 217, 182);
+    font-family: sans-serif;
+    font-weight: 100;
+}
+
+nav ul{
+    background-color: 285430;
+    width: 100%;
+    list-style-type: none;
+    text-align: center;
+}
+nav li{
+    display:inline-flex;
+}
+nav a{
+    text-decoration: none;
+    color: rgb(229, 217, 182);
+    padding: 8px;
+    width: 150px;
+}
+
+footer{
+    width: 100%;
+    height: 100%;
+    background-color: rgb(40, 84, 48);
+    color: rgb(229, 217, 182);
+    margin-top: 415px;
+    text-align: center;
+    padding: 5px;
+}
+
+.botonFachero{
+    position: relative;
+    width: 100px;
+    height: 100px;
+    color: rgb(229, 217, 182);
+    border: none;
+    color:black;
+    padding: 20px;
+    font-size: 16px;
+    border:solid black;
+}
+
+
+#img_inicio{
+    width: 100%;
+    height: 60%;
+}
+
+#Acerca_de_nosotros{
+    padding: 20px;
+    text-align: center;
+}
+#acerca_section{
+ text-align: center;
+    width: 1000px;
+    background-color:rgb(95, 141, 78) ;
+    border:solid black;
+    padding: 2px;
+    margin: auto;
+    margin-top: 10px;
+    border-radius: 20px;
+    font-family: 'Times New Roman', Times, serif;
+}
+
+
+#reporte_section{
+    text-align: center;
+       width: 1000px;
+       background-color:rgb(95, 141, 78) ;
+       border:solid black;
+       padding: 2px;
+       margin: auto;
+       margin-top: 10px;
+       border-radius: 20px;
+       font-family: 'Times New Roman', Times, serif;
+   }
+
+#Acerca_de_nosotros_info{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.infoReporte{
+    padding-left: 20px;
+    padding-right: 20px;
+}
+p{
+    font-family: 'Times New Roman', Times, serif;
+}
+
+

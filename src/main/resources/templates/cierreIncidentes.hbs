@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <link rel="stylesheet" href="/css/cierreIncidente.css" />
+</head>
+<body>
+<div class="CONSULTA-INCIDENTES">
+    <div class="div">
+        <div class="overlap">
+            <form method="POST" action="/cerrarIncidentes">
+                            {{#each incidentesXcomunidad}}
+                                <section class="incidente-section">
+                                    <h2>{{this.nombre}}:</h2> <!-- Supongamos que 'nombre' es un atributo de la comunidad -->
+                                    {{#each this}}
+                                        <div class="incidente">
+                                            <div class="rectangle"><p>{{this.descripcion}}</p></div>
+                                            <div class="rectangle-2">
+                                                {{#if this.estado}}
+                                                    <p>abierto</p>
+                                                {{else}}
+                                                    <p>cerrado</p>
+                                                {{/if}}
+                                            </div>
+                                            <div class="rectangle-3">
+                                                <input type="checkbox" name="incidentes" value="{{this.id}}">
+                                            </div><!--checkbox-->
+                                        </div>
+                                    {{/each}}
+                                </section>
+                            {{/each}}
+                            <button type="submit">Cerrar Incidentes</button>
+                        </form>
+        </div>
+        <div class="overlap-group">
+            <div class="rectangle-16"></div>
+            <div class="text-wrapper">ESTADO</div>
+            <div class="text-wrapper-2">INCIDENTE</div>
+        </div>
+        <div class="rectangle-17"></div>
+        <div class="rectangle-18"></div>
+        <div class="rectangle-19"></div>
+    </div>
+    <div class="overlap-2">
+        <div class="rectangle-20"></div>
+        <p class="p">Consulta de incidentes por estado</p>
+    </div>
+    <div class="overlap-group-2">
+        <img class="vector" src="img/image.svg" /> <img class="img" src="img/vector.svg" />
+    </div>
+</div>
+</body>
+</html>

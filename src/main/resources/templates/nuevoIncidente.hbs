@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/estilosNuevoIncidente.css">
+    <title>Nuevo incidente</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<form method=POST action="/incidentes/nuevo">
+<div class="div">
+    <div class="div-2">
+        <div class="div-3">
+            <a href='/'><img
+                    loading="lazy"
+                    srcset="/img/iconoMenu.svg"
+                    class="img"
+            /></a>
+
+            <a href='/menu'><img
+                    loading="lazy"
+                    srcset="/img/iconoPerfil.svg"
+                    class="img-2"
+            /></a>
+
+        </div>
+    </div>
+    <div class="div-4"><div class="div-5">Nuevo incidente</div></div>
+
+    <div class="div-6">
+        <div class="div-7">
+            <input type="text" placeholder="Titulo" name="tituloIncidente" class="inputTitulo"></div>
+        <div class="div-8">
+            <input type="text" placeholder="Descripcion" name="descripcionIncidente" class="inputDescripcion"></div>
+        <div class="div-9">
+            <select name="prestacion">
+        {{#each prestaciones}}
+                <option value="{{id}}" name="prestacionprestacion"> {{this.servicio.nombreServicio}} - {{this.establecimiento.nombre}}</option>
+        {{/each}}
+            </select></div>
+
+
+        <div class="div-10">
+            <select name="comunidad">
+        {{#each comunidades}}
+                <option value="{{id}}" name="comunidadcomunidad"> {{this.nombre}}</option>
+        {{/each}}
+            </select></div>
+
+    </div>
+    <div class="div-11">
+        <div class="div-12">
+            <button type="submit">Abrir Incidente</button></div></div>
+    </div>
+</form>
+</body>
+</html>

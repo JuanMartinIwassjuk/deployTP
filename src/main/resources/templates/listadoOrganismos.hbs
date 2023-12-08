@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/estilosListadoOrganismos.css">
+    <title>MENU</title>
+    <meta charset="UTF-8">
+</head>
+<body>
+<div class="div">
+    <div class="div-2">
+        <div class="div-3">
+            <a href='/'><img
+                    loading="lazy"
+                    srcset="/img/iconoMenu.svg"
+                    class="img"
+            /></a>
+
+            <a href='/menu'><img
+                    loading="lazy"
+                    srcset="/img/iconoPerfil.svg"
+                    class="img-2"
+            /></a>
+
+        </div>
+    </div>
+    <div class="div-4">
+        <div class="div-5">
+            Consulta de Organismos de control y Empresas Prestadoras
+        </div>
+    </div>
+    <div class="div-6">
+        <div class="div-7">
+            <div class="div-8">
+                <div class="div-9">Organismo de control</div>
+                <div class="div-10">/</div>
+                <div class="div-11">Empresa Prestadora</div>
+            </div>
+        </div>
+        <div class="div-12">
+            {{#each organismos}}
+
+                <div class="div-13">
+                    <div class="div-14">{{this.nombreOrganismo}}</div>
+                    <div class="div-15">/</div>
+                    <div class="div-16">{{this.getEmpresaPrestadora.nombreEmpresa}}</div>
+                </div>
+            {{/each}}
+
+        </div>
+    </div>
+</div>
+
+
+</body>
+</html>

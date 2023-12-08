@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html>
+   <head>
+      <link href="https://fonts.googleapis.com/css?family=Almarai&display=swap" rel="stylesheet" />
+      <link href="./css/estilosRankings.css" rel="stylesheet" />
+      <title>Document</title>
+   </head>
+   <body>
+      <div class="v26_32">
+         <div class="v26_33"></div>
+         <div class="v26_48"></div>
+         <div class="v26_49"></div>
+         <span class="v26_50">RANKINGS </span>
+         <div class="v26_60"></div>
+         <span class="v26_61">Entidades con Mayor Promedio de Cierre</span>
+         <div class="v26_62"></div>
+         <span class="v26_63">Entidades con Mayor Grado de Impacto</span>
+         <div class="v26_51"></div>
+         <div class="v26_52"></div>
+         <div class="v26_53">
+             <div class="table-container">
+                 <div class="table-responsive">
+                     <table class="table table-striped table-hover">
+                         <tr>
+                             <th>ID</th>
+                             <th>Nombre</th>
+                         </tr>
+                         <tbody>
+                             {{#each promedioCierre}}
+                             <tr>
+                                 <td>{{this.id}}</td>
+                                 <td>{{this.nombre}}</td>
+                             </tr>
+                             {{/each}}
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+         </div>
+         <div class="v26_54"></div>
+         <span class="v26_59">ENTIDADES</span>
+         <div class="v26_64"></div>
+         <div class="v26_79">
+             <div class="table-container">
+                 <div class="table-responsive">
+                     <table class="table table-striped table-hover">
+                         <tr>
+                             <th>ID</th>
+                             <th>Nombre</th>
+                         </tr>
+                         <tbody>
+                             {{#each impacto}}
+                             <tr>
+                                 <td>{{this.id}}</td>
+                                 <td>{{this.nombre}}</td>
+                             </tr>
+                             {{/each}}
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+         </div>
+         <div class="v26_80"></div>
+         <span class="v26_85">ENTIDADES</span>
+         <div class="v56_36"></div>
+         <span class="v56_37">Entidades con Mayor Cantidad de Incidentes Reportados</span>
+         <div class="v56_38"></div>
+         <div class="v56_44">
+             <div class="table-container">
+                 <div class="table-responsive">
+                     <table class="table table-striped table-hover">
+                         <tr>
+                             <th>ID</th>
+                             <th>Nombre</th>
+                         </tr>
+                         <tbody>
+                             {{#each cantIncidentes}}
+                             <tr>
+                                 <td>{{this.id}}</td>
+                                 <td>{{this.nombre}}</td>
+                             </tr>
+                             {{/each}}
+                         </tbody>
+                     </table>
+                 </div>
+             </div>
+         </div>
+         <div class="v56_45"></div>
+         <span class="v56_46">ENTIDADES</span>
+      </div>
+   </body>
+</html>

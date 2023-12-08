@@ -1,0 +1,13 @@
+{{#partial "contenido"}}
+  <link rel="stylesheet" type="text/css" href="/css/incidentesxubicacion.css">
+<br>
+ <h2 id="tituloIncidentesxubi">Incidentes en mi Ubicacion:</h2>
+ <div id="incidentesDiv">
+  <h5>Titulo, Detalle, fechaApertura y cantidad de afectados: </h5>
+{{#each incidentesXubicacion}}
+ <li> {{this.titulo}} | {{this.detalle}} | {{this.fechaApertura}} | {{this.cantidadAfectados}}  </li>
+{{/each}}
+</div>
+
+{{/partial}}
+ {{> templates/base }}

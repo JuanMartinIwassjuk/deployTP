@@ -1,0 +1,17 @@
+ {{#partial "contenido"}}
+  <link rel="stylesheet" type="text/css" href="/css/register.css">
+    <form  action="/iniciarsesion" method="POST" id="login">
+        <h4>Iniciar Sesion</h4>
+        <br>
+        <label for="username">Usuario:    </label>
+        <input name="username" id="username" class="controls" type="text" placeholder="User"> </input>
+        <br>
+        <label for="password">Contraseña:</label><br>
+        <input name="password" id="password" class="controls" type="password" placeholder="Password"> </input>
+
+
+        <button class="boton" type="submit">Enviar</button>
+    </form>
+
+  {{/partial}}
+ {{> templates/base }}
