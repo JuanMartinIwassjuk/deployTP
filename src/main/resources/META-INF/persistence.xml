@@ -10,11 +10,12 @@
 
 
     <properties>
-      <property name="hibernate.connection.driver_class" value="com.mysql.jdbc.Driver" />
-      <property name="hibernate.connection.url" value="jdbc:mysql://localhost:3306/tpa" />
-      <property name="hibernate.connection.username" value="root" />
-      <property name="hibernate.connection.password" value="123456" />
-
+      <property name="hibernate.archive.autodetection" value="class"/>
+      <property name="hibernate.connection.driver_class" value="org.postgresql.Driver" />
+      <property name="hibernate.connection.url" value="jdbc:postgresql:postgres://dpg-cloqa8h46foc73c95260-a.oregon-postgres.render.com:5432/db_xxdw" />
+      <property name="hibernate.connection.username" value="tpdds" />
+      <property name="hibernate.connection.password" value="TF3k4oG6CvxbL3b89oL4pcz8DR04oINI" />
+      <property name="hibernate.event.merge.entity_copy_observer" value="allow"/>
 
 
       <!--<property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/>
