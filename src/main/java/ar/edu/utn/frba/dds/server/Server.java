@@ -57,7 +57,7 @@ public class Server {
     RepositorioComunidades repositorioComunidades = new RepositorioComunidades(em);
 
 
-    InitializerV2.init(em);                       //DESCOMENTAR CUANDO CUANDO SE HAGAN LOS INSERTS EN LA DB
+    //InitializerV2.init(em);                       //DESCOMENTAR CUANDO CUANDO SE HAGAN LOS INSERTS EN LA DB
     if(app == null) {
       PrettyProperties.getInstance();
       Integer port = Integer.parseInt(System.getProperty("port", "8080"));
