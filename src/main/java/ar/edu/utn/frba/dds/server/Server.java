@@ -57,7 +57,7 @@ public class Server {
     RepositorioComunidades repositorioComunidades = new RepositorioComunidades(em);
 
 
-    //InitializerV2.init(em);                       //DESCOMENTAR CUANDO CUANDO SE HAGAN LOS INSERTS EN LA DB
+    InitializerV2.init(em);                       //DESCOMENTAR CUANDO CUANDO SE HAGAN LOS INSERTS EN LA DB
     if(app == null) {
       PrettyProperties.getInstance();
       Integer port = Integer.parseInt(System.getProperty("port", "8080"));
@@ -113,7 +113,7 @@ public class Server {
     configOverrides.put("javax.persistence.jdbc.driver", env.get("javax.persistence.jdbc.driver"));
     configOverrides.put("hibernate.hbm2ddl.auto", env.get("hibernate.hbm2ddl.auto"));
     configOverrides.put("hibernate.dialect",env.get("hibernate.dialect"));
-    return Persistence.createEntityManagerFactory("simple-persistence-unit");
+    return Persistence.createEntityManagerFactory("simple-persistence-unit",configOverrides);
   }
 }
 
