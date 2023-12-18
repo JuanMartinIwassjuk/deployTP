@@ -16,6 +16,7 @@
       <property name="hibernate.connection.username" value="tpdds" />
       <property name="hibernate.connection.password" value="TF3k4oG6CvxbL3b89oL4pcz8DR04oINI" />
       <property name="hibernate.event.merge.entity_copy_observer" value="allow"/>
+      <property name="hibernate.dialect" value="org.hibernate.dialect.PostgreSQLDialect"/>
 
 
       <!--<property name="hibernate.connection.driver_class" value="org.hsqldb.jdbcDriver"/>
