@@ -16,11 +16,6 @@ h1 #espacio{
     color: rgb(229, 217, 182);
 }
 
-.div {
-    background-color: #fe8e5e;
-    display: flex;
-    flex-direction: column;
-}
 .div-2 {
     background-color: #322e35;
     align-self: stretch;

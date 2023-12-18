@@ -5,6 +5,39 @@ import ar.edu.utn.frba.dds.models.entidades.modosnotificacion.NotificadorEnInsta
 import ar.edu.utn.frba.dds.models.entidades.modosnotificacion.NotificadorSinApuros;
 import javax.persistence.AttributeConverter;
 import javax.persistence.Converter;
+import java.util.Objects;
+/*
+@Converter(autoApply = true)
+public class ModoNotificacionConverter implements AttributeConverter<ModoNotificacion, String> {
+  @Override
+  public String convertToDatabaseColumn(ModoNotificacion modoDeNotificacion) {
+    String nombreDelModo = "";
+
+    switch (modoDeNotificacion.getClass().getName()) {
+      case "NotificadorEnInstante":
+        nombreDelModo = "instante";
+        break;
+      case "NotificadorSinApuros":
+        nombreDelModo = "sinApuros";
+        break;
+    }
+    return nombreDelModo;
+  }
+
+  @Override
+  public ModoNotificacion convertToEntityAttribute(String s) {
+    ModoNotificacion medio = null;
+
+    if (Objects.equals(s, "instante"))
+      medio = new NotificadorEnInstante();
+
+    if (Objects.equals(s, "sinApuros"))
+      medio = new NotificadorSinApuros();
+
+    return medio;
+  }
+}
+*/
 
 @Converter(autoApply = true)
 public class ModoNotificacionConverter implements AttributeConverter<ModoNotificacion, String> {
@@ -12,7 +45,7 @@ public class ModoNotificacionConverter implements AttributeConverter<ModoNotific
     public String convertToDatabaseColumn(ModoNotificacion modoNotificacion) {
       String modo = null;
 
-      if(modoNotificacion.getClass().getName().equals("ar.edu.utn.frba.dds.modosnotificacion.NotificadorEnInstante")) {
+      if(modoNotificacion.getClass().getName().equals("ar.edu.utn.frba.dds.models.entidades.modosnotificacion.NotificadorEnInstante")) {
         return  "instante";
       }
       else

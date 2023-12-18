@@ -8,7 +8,7 @@ import java.util.List;
 
 public class operadorFechas {
   public double promedioDias(LocalDateTime fecha1,LocalDateTime fecha2){
-    return (fecha2.getDayOfMonth()-fecha1.getDayOfMonth())/2;
+    return (double) (fecha2.getDayOfMonth() - fecha1.getDayOfMonth()) /2;
   }
   public double promedioHoras(LocalDateTime fecha1,LocalDateTime fecha2){
     return Math.abs((fecha2.getHour()-fecha1.getHour())/2);

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/estilosRankingsV2.css">
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <title>MENU</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+<div class="div">
+    <div class="div-2">
+        <div class="div-3">
+            <a href='/'><img loading="lazy" srcset="/img/iconoMenu.svg" class="img" /></a>
+            <a href='/menu'><img loading="lazy" srcset="/img/iconoPerfil.svg" class="img-2" /></a>
+        </div>
+    </div>
+
+    <div class="div11">
+        <div class="div-21"></div>
+        <div class="div-31">RANKINGS DE ENTIDADES</div>
+        <div class="div-41">● Mayor Promedio de Cierre</div>
+        <div class="div-51">
+            <div class="div-61">Entidades</div>
+            <div class="div-71">
+                <table class="table table-bordered custom-table">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="font-weight-bold">Nombre</th>
+                        <th scope="col" class="font-weight-bold">Tipo</th>
+                        <th scope="col" class="font-weight-bold">Localizacion</th>
+                        <th scope="col" class="font-weight-bold">Incidentes</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each promedioCierre}}
+                        <tr>
+                            <td>{{this.nombre}}</td>
+                            <td>{{this.tipo_entidad}}</td>
+                            <td>{{this.localizacion.getNombreLocalizacion}}</td>
+                            <td>{{this.cantidadIncidentesEnLaSemana}}</td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="div-81">● Mayor Grado de Impacto</div>
+        <div class="div-91">
+            <div class="div-101">Entidades</div>
+            <div class="div-111">
+                <table class="table table-bordered custom-table">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="font-weight-bold">Nombre</th>
+                        <th scope="col" class="font-weight-bold">Tipo</th>
+                        <th scope="col" class="font-weight-bold">Localizacion</th>
+                        <th scope="col" class="font-weight-bold">Incidentes</th>
+                        <th scope="col" class="font-weight-bold">Grado impacto</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each impacto}}
+                        <tr>
+                            <td>{{this.nombre}}</td>
+                            <td>{{this.tipo_entidad}}</td>
+                            <td>{{this.localizacion.getNombreLocalizacion}}</td>
+                            <td>{{this.cantidadIncidentesEnLaSemana}}</td>
+                            <td>{{this.gradoDeProblematica}}</td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="div-121">● Mayor Cantidad de Incidentes Reportados</div>
+        <div class="div-131">
+            <div class="div-141">Entidades</div>
+            <div class="div-151">
+                <table class="table table-bordered custom-table">
+                    <thead>
+                    <tr>
+                        <th scope="col" class="font-weight-bold">Nombre</th>
+                        <th scope="col" class="font-weight-bold">Tipo</th>
+                        <th scope="col" class="font-weight-bold">Localizacion</th>
+                        <th scope="col" class="font-weight-bold">Incidentes</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each cantIncidentes}}
+                        <tr>
+                            <td>{{this.nombre}}</td>
+                            <td>{{this.tipo_entidad}}</td>
+                            <td>{{this.localizacion.getNombreLocalizacion}}</td>
+                            <td>{{this.cantidadIncidentesEnLaSemana}}</td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</body>
+
+</html>

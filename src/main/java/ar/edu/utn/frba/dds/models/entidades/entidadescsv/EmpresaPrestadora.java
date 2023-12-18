@@ -20,10 +20,13 @@ public class EmpresaPrestadora extends Persistente {
   private String nombre_empresa;
 
 
+  //@OneToMany(cascade = CascadeType.ALL)
   @OneToMany(cascade = CascadeType.ALL)
   @JoinColumn(name = "empresa_prestadora_id", referencedColumnName = "id")
   private List<Entidad> entidades;
 
+  //@OneToOne(cascade = CascadeType.ALL)
+  //@OneToOne(cascade = CascadeType.MERGE)
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "miembro_id", referencedColumnName = "id")
   private Miembro usuario_designado;

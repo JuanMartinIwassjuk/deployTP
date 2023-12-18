@@ -22,9 +22,11 @@ public class Establecimiento extends Persistente {
   private String nombre;
   @Enumerated(EnumType.STRING)
   private TipoEstablecimiento tipo_establecimiento;
-  @ManyToMany(cascade = CascadeType.ALL)
-  private List<Servicio> servicios_de_establecimiento; //Revisar si es prestaciones
-  @ManyToOne(cascade = CascadeType.ALL)
+  //@ManyToMany(cascade = CascadeType.ALL)
+  @ManyToMany
+  private List<Servicio> servicios_de_establecimiento;
+  //@ManyToOne(cascade = CascadeType.ALL)
+  @ManyToOne(cascade = CascadeType.MERGE)
   @JoinColumn(name = "entidad_id", referencedColumnName = "id")
   private Entidad entidad;
 

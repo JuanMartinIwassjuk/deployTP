@@ -7,6 +7,7 @@ import ar.edu.utn.frba.dds.models.repositorios.RepositorioEntidades;
 import ar.edu.utn.frba.dds.server.utils.ICrudViewsHandler;
 import io.javalin.http.Context;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -35,7 +36,7 @@ public class EntidadesController extends Controller implements ICrudViewsHandler
         model.put("promedioCierre", promedioCierre);
         model.put("impacto", impacto);
         model.put("cantIncidentes", cantIncidentes);
-        context.render("rankings.hbs", model);
+        context.render("rankingsv2.hbs", model);
     }
 
     @Override

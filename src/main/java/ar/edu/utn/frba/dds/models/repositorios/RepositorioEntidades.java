@@ -6,6 +6,7 @@ import io.github.flbulgarelli.jpa.extras.simple.WithSimplePersistenceUnit;
 
 import java.util.List;
 import javax.persistence.EntityManager;
+import javax.persistence.EntityTransaction;
 
 public class RepositorioEntidades implements WithSimplePersistenceUnit, ICrudRepository{
 
@@ -47,7 +48,12 @@ public class RepositorioEntidades implements WithSimplePersistenceUnit, ICrudRep
 
   @Override
   public void actualizar(Object o) {
+    EntityTransaction tx = em.getTransaction();
+    if (!tx.isActive())
+      tx.begin();
 
+    em.merge(o);
+    tx.commit();
   }
 
   @Override

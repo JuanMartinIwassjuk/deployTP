@@ -36,8 +36,10 @@ public class SesionController implements ICrudViewsHandler {
     modelo.put("RolAdministrador", false);
     modelo.put("RolMiembro", false);
 
+
     context.render("IniciarSesion.hbs", modelo);
     System.out.println("Mostro la pantalla login");
+    System.out.println(RepositorioUsuarios.getInstance().getUsuarios().size());
 
   }
 
@@ -50,7 +52,7 @@ public class SesionController implements ICrudViewsHandler {
               context.formParams("username"),
               context.formParams("password")
       );
-
+      System.out.println("QUIERE SETEAR");
       context.sessionAttribute("user_rol", usuario.getRol().getNombre());
       context.sessionAttribute("tipo_rol",usuario.getRol().getTipo().toString());
       context.sessionAttribute("user_id", usuario.getId().toString());

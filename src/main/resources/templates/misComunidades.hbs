@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/estilosListadoOrganismos.css">
+    <title>MENU</title>
+    <meta charset="UTF-8">
+    <style>
+
+        .inputTitulo {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 16px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+            border: 2px solid #4CAF50;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            transition: background-color 0.3s, color 0.3s, border-color 0.3s;
+        }
+
+        .inputTitulo:hover {
+            background-color: white;
+            color: #4CAF50;
+            border-color: #4CAF50;
+        }
+
+
+        .encabezado-fila {
+            font-size: 22px;
+            font-weight: bold;
+        }
+
+
+        .registro-fila {
+            font-size: 20px;
+        }
+    </style>
+</head>
+
+<body>
+<form method=POST action="/comunidades">
+
+    <div class="div">
+        <div class="div-2">
+            <div class="div-3">
+                <a href='/'><img loading="lazy" srcset="/img/iconoMenu.svg" class="img" /></a>
+                <a href='/menu'><img loading="lazy" srcset="/img/iconoPerfil.svg" class="img-2" /></a>
+            </div>
+        </div>
+        <div class="div-4">
+            <div class="div-5">
+                Bienvenido! ¿En que comunidad desea operar?
+            </div>
+        </div>
+        <div class="div-6">
+            <div class="div-7">
+                <div class="div-55">
+                    Comunidades que soy miembro:
+                </div>
+            </div>
+            <div class="div-12">
+                <table class="table">
+                    <thead>
+                    <tr class="encabezado-fila">
+                        <th class="text-center font-weight-bold">Comunidad</th>
+                        <th class="text-center font-weight-bold">Miembros</th>
+                        <th class="text-center font-weight-bold">Prestaciones de interes </th>
+                        <th class="text-center font-weight-bold"></th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    {{#each comunidades}}
+                        <tr class="registro-fila">
+                            <td class="text-center">{{this.nombre}}</td>
+                            <td class="text-center">{{this.getCantidadDeMiembros}}</td>
+                            <td class="text-center">{{this.getCantidadPrestacionesInteres}}</td>
+                            <td>
+                                <button type="submit" value="{{id}}" name="comunidadBuscada" class="inputTitulo">
+                                    <i class="fas fa-times-circle"></i> Ingresar
+                                </button>
+                            </td>
+                        </tr>
+                    {{/each}}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+</form>
+</body>
+
+</html>

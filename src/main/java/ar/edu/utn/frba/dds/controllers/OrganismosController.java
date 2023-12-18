@@ -1,5 +1,6 @@
 package ar.edu.utn.frba.dds.controllers;
 
+import ar.edu.utn.frba.dds.models.entidades.common.TipoRol;
 import ar.edu.utn.frba.dds.models.entidades.common.Usuario;
 import ar.edu.utn.frba.dds.models.entidades.entidadescsv.OrganismoDeControl;
 import ar.edu.utn.frba.dds.models.entidades.entidadescsv.ServicioCargaCSV;
@@ -38,13 +39,21 @@ public class OrganismosController extends Controller implements ICrudViewsHandle
 
   @Override
   public void show(Context context) {
-    usuarioLogueado(context);
-    Usuario usuarioLogueado = super.usuarioLogueado(context);
-
-
-    if(usuarioLogueado.getRol().tenesPermiso("cargar_organismos")){
-      Map<String, Object> model = new HashMap<>();
+    Map<String, Object> model = new HashMap<>();
+    if(context.sessionAttribute("user_id") == null){
+      context.redirect("/iniciarsesion");
+    }
+    else if (context.sessionAttribute("comunidad_id") == null){
+      context.redirect("/comunidades");
+    }
+    else if(context.sessionAttribute("roluser_id").equals(TipoRol.ADMINISTRADOR)){
       context.render("cargaEntidades.hbs", model);
+    }
+    else {
+      System.out.println(context.sessionAttribute("roluser_id").toString() +"COOKIE");
+      System.out.println(String.valueOf(TipoRol.ADMINISTRADOR) + "ENUM");
+      System.out.println(TipoRol.ADMINISTRADOR.name() + "NAMEEEEEE");
+      context.render("401v2.hbs");
     }
   }
 
@@ -89,10 +98,7 @@ public class OrganismosController extends Controller implements ICrudViewsHandle
           null, maxFileSize, maxRequestSize, fileSizeThreshold);
       context.req().setAttribute("org.eclipse.jetty.multipartConfig",
           multipartConfigElement);
-      //request.raw().setAttribute("org.eclipse.jetty.multipartConfig",
-         // multipartConfigElement);
     }
-    //Part p = request.raw().getPart("fileSelect");
     Part p = context.req().getPart("fileSelect");
 
     byte[] file = null;
@@ -104,23 +110,24 @@ public class OrganismosController extends Controller implements ICrudViewsHandle
 
     ServicioCargaCSV servicioCargaDatos= new ServicioCargaCSV();
     List<OrganismoDeControl> organismoDeControls = servicioCargaDatos.convertCSVFromBytes(file);
-    System.out.println(organismoDeControls.get(0).getNombreOrganismo());
+    if(organismoDeControls.isEmpty()){
+      context.redirect("/cargaOrganismos");
+    } else{
 
-    //withTransaction(() -> {
-      //DatosActividadRepositorio.getInstance().guardarListaDatoActividad(organismoDeControls);
+      System.out.println(organismoDeControls.get(0).getNombreOrganismo());
+
       repositorioOrganismosControl.guardarOrganismos(organismoDeControls);
-    //});
 
+      List<OrganismoDeControl> organismosControl = repositorioOrganismosControl.buscarTodos();
 
-    List<OrganismoDeControl> organismosControl = repositorioOrganismosControl.buscarTodos();
+      System.out.println(organismosControl.get(0).getNombreOrganismo());
+      System.out.println(organismosControl.get(0).getEmpresaPrestadora().getNombreEmpresa());
+      System.out.println(organismosControl.get(1).getNombreOrganismo());
+      System.out.println(organismosControl.get(1).getEmpresaPrestadora().getNombreEmpresa());
 
-    System.out.println(organismosControl.get(0).getNombreOrganismo());
-    System.out.println(organismosControl.get(0).getEmpresaPrestadora().getNombreEmpresa());
-    System.out.println(organismosControl.get(1).getNombreOrganismo());
-    System.out.println(organismosControl.get(1).getEmpresaPrestadora().getNombreEmpresa());
+      context.redirect("/");
+    }
 
-    //model.put("datosActividad", organismosControl);
-    context.redirect("/");
   }
 
   public void listadoOrganismos(Context context) {
@@ -135,12 +142,6 @@ public class OrganismosController extends Controller implements ICrudViewsHandle
     model.put("organismos", organismos);
     context.render("listadoOrganismos.hbs", model);
   }
-
-
-
-
-
-
 
 }
 

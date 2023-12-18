@@ -29,14 +29,16 @@ public class Incidente extends Persistente {
   @Column(name = "fecha_cierre", columnDefinition = "DATE")
   private LocalDateTime fecha_cierre;
 
-  @ManyToOne(cascade = CascadeType.ALL)
+  //@ManyToOne(cascade = CascadeType.ALL)
+  @ManyToOne(cascade = CascadeType.MERGE)
   @JoinColumn(name = "prestacion_id", referencedColumnName = "id")
   private Prestacion prestacion;
 
   @Column(name = "estado_incidente")
   private Boolean esta_abierto;
 
-  @ManyToOne(cascade = CascadeType.ALL)
+  //@ManyToOne(cascade = CascadeType.ALL)
+  @ManyToOne(cascade = CascadeType.MERGE)
   @JoinColumn(name = "comunidad_id", referencedColumnName = "id")
   private Comunidad comunidad;
 
@@ -128,6 +130,10 @@ public class Incidente extends Persistente {
     return this.cantidad_afectados;
   }
 
+  public int getCantidad_afectados() {
+    return cantidad_afectados;
+  }
+
   public void setFechaApertura(LocalDateTime fechaApertura) {
     this.fecha_apertura = fechaApertura;
   }
@@ -151,4 +157,5 @@ public class Incidente extends Persistente {
   public Localizacion getLocalizacion() {
     return this.getPrestacion().getEstablecimiento().getEntidad().getLocalizacionAsignada();
   }
+
 }

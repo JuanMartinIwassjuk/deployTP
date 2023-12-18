@@ -18,14 +18,18 @@ public class Comunidad extends Persistente {
   @Column(name = "nombre")
   private String nombre;
 
-  @ManyToMany(cascade = CascadeType.ALL)
+  @OneToMany(cascade = CascadeType.ALL)
   private List<Miembro> miembros;
 
-  @OneToMany(cascade = CascadeType.ALL)
-  @JoinColumn(name = "comunidad_id", referencedColumnName = "id")
+  @OneToMany(cascade = CascadeType.MERGE)
+  @JoinColumn(name = "incidente_id", referencedColumnName = "id")
   private List<Incidente> incidentes_miembros;
 
-  @ManyToMany(cascade = CascadeType.ALL)
+  @OneToMany(cascade = CascadeType.MERGE)
+  @JoinColumn(name = "admin_id", referencedColumnName = "id")
+  private List<Miembro> administradores;
+
+  @ManyToMany(cascade = CascadeType.MERGE)
   private List<Prestacion> prestaciones_de_interes;
 
 
@@ -53,7 +57,7 @@ public class Comunidad extends Persistente {
 
   public void agregarIncidente(Incidente incidente){
     incidentes_miembros.add(incidente);
-    incidente.setComunidad(this);
+    //incidente.setComunidad(this);
   }
 
   public int cantidadDeMiembros(){
@@ -98,7 +102,28 @@ public class Comunidad extends Persistente {
     this.prestaciones_de_interes = prestacionesDeInteres;
   }
 
+  public int getCantidadDeMiembros(){
+    return this.miembros.size();
+  }
+
+  public int getCantidadDeIncidentes(){
+    return this.incidentes_miembros.size();
+  }
+
   public List<Prestacion> getPrestacionesDeInteres() {
     return prestaciones_de_interes;
   }
+
+  public void setAdministradores(List<Miembro> administradores) {
+    this.administradores = administradores;
+  }
+
+  public int getCantidadPrestacionesInteres(){
+    return prestaciones_de_interes.size();
+  }
+
+  public List<Miembro> getAdministradores() {
+    return administradores;
+  }
 }
+

@@ -31,26 +31,27 @@ public class MiembrosController extends Controller implements ICrudViewsHandler 
   @Override
   public void show(Context context) {
 
-    usuarioLogueado(context);
-    Usuario usuarioLogueado = super.usuarioLogueado(context);
+    Map<String, Object> model = new HashMap<>();
+    if(context.sessionAttribute("user_id") == null){
+      context.redirect("/iniciarsesion");
+    }
+    else if (context.sessionAttribute("comunidad_id") == null){
+      context.redirect("/comunidades");
+    }
+    else if(context.sessionAttribute("roluser_id").equals(TipoRol.ADMINISTRADOR)){
 
-
-    if (usuarioLogueado.getRol().tenesPermiso("cargar_organismos")) {
-
-      Long idUsuarioLogueado = usuarioLogueado.getId();
-      List<Miembro> todosLosMiembros = repositorioMiembros.buscarTodos();
-      List<Miembro> miembrosDelUser = todosLosMiembros.stream().filter(miembro -> miembro.getUsuarioId().equals(idUsuarioLogueado)).toList();
-      List<Miembro> miembrosAdmin = miembrosDelUser.stream().filter(miembro -> miembro.getUsuario().getRol().getTipo().equals(TipoRol.ADMINISTRADOR)).toList();
-      List<Comunidad> comunidadesDelMiembro = miembrosAdmin.stream().flatMap(miembro -> miembro.getComunidadesQueEsMiembro().stream()).toList();
-      List<List<Miembro>> listadoMiembros = comunidadesDelMiembro.stream().map(Comunidad::getMiembros).toList();
-      List<Miembro> listadoFinal = listadoMiembros.stream().flatMap(List::stream).toList();
-
-
-      Map<String, Object> model = new HashMap<>();
-      model.put("miembros",listadoFinal);
+      List<Comunidad> comunidades = RepositorioComunidades.getInstance().buscarTodos();
+      Comunidad comunidadObjetivo = comunidades.stream().filter(comunidad -> comunidad.getId().equals(Long.parseLong(context.sessionAttribute("comunidad_id")))).toList().get(0);
+      List<Miembro> miembrosComunidad = comunidadObjetivo.getMiembros();
+      model.put("miembros",miembrosComunidad);
       context.render("miembros.hbs", model);
     }
+    else {
+      context.render("401v2.hbs");
+    }
   }
+
+
 
   @Override
   public void create(Context context) {

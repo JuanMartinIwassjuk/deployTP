@@ -549,7 +549,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     lineaB.setNombre("Linea B SUBTE");
     lineaB.setTipoEntidad(TipoEntidad.LINEA);
     lineaB.setIncidentes(incidentesMedrano);
-    //lineaB.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    lineaB.asingarLocalizacion("Buenos Aires",localizadorProvincia);
 
 
     List<Establecimiento> estaciones = new ArrayList<>();
@@ -619,8 +619,8 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroJavier.setNotificadorPreferido(new MailNotifier());
     miembroJavier.setModoNotificacion(new NotificadorEnInstante());
     miembroJavier.setIncidentesSinNotificar(incidentes);
-    //miembroJavier.asingarLocalizacion("Buenos Aires",localizadorProvincia);
-    miembroJavier.setComunidadesQueEsMiembro(comunidadesJavier);
+    miembroJavier.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    //miembroJavier.setComunidadesQueEsMiembro(comunidadesJavier);       -----------------------------AAAAAAAAAAAAAAAAA
 
 
 
@@ -813,7 +813,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     lineaA.setNombre("Linea A SUBTE");
     lineaA.setTipoEntidad(TipoEntidad.LINEA);
     lineaA.setIncidentes(incidentesRetiro);
-    //lineaA.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    lineaA.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     lineaA.setEstablecimientos(estaciones);
 
 
@@ -967,7 +967,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     prestacionesDeInteresComunidadRetiro.add(prestacionAscensorRetiroSecundario);
     prestacionesDeInteresComunidadRetiro.add(prestacionAscensorRetiroSecundario);
 
-
+/*
 
     //Seteo Miembro
 
@@ -978,7 +978,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroMatias.setNotificadorPreferido(new MailNotifier());
     miembroMatias.setModoNotificacion(new NotificadorEnInstante());
     miembroMatias.setIncidentesSinNotificar(incidentes);
-    //miembroMatias.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroMatias.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroMatias.setComunidadesQueEsMiembro(comunidadesMatiAdmin);
 
 
@@ -989,7 +989,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroJuan.setNotificadorPreferido(new MailNotifier());
     miembroJuan.setModoNotificacion(new NotificadorEnInstante());
     miembroJuan.setIncidentesSinNotificar(incidentes);
-    //miembroJuan.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroJuan.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroJuan.setComunidadesQueEsMiembro(comunidadesJuan);
 
 
@@ -1001,7 +1001,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroMaria.setNotificadorPreferido(new MailNotifier());
     miembroMaria.setModoNotificacion(new NotificadorEnInstante());
     miembroMaria.setIncidentesSinNotificar(incidentes);
-    //miembroMaria.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroMaria.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroMaria.setComunidadesQueEsMiembro(comunidadesMaria);
 
 
@@ -1012,7 +1012,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroJose.setNotificadorPreferido(new MailNotifier());
     miembroJose.setModoNotificacion(new NotificadorEnInstante());
     miembroJose.setIncidentesSinNotificar(incidentes);
-    //miembroJose.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroJose.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroJose.setComunidadesQueEsMiembro(comunidadesJose);
 
 
@@ -1023,7 +1023,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroPaula.setNotificadorPreferido(new MailNotifier());
     miembroPaula.setModoNotificacion(new NotificadorEnInstante());
     miembroPaula.setIncidentesSinNotificar(incidentes);
-    //miembroPaula.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroPaula.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroPaula.setComunidadesQueEsMiembro(comunidadesPaula);
 
 
@@ -1034,7 +1034,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroSergio.setNotificadorPreferido(new MailNotifier());
     miembroSergio.setModoNotificacion(new NotificadorEnInstante());
     miembroSergio.setIncidentesSinNotificar(incidentes);
-    //miembroSergio.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroSergio.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroSergio.setComunidadesQueEsMiembro(comunidadesSergio);
 
 
@@ -1045,7 +1045,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroHoracio.setNotificadorPreferido(new MailNotifier());
     miembroHoracio.setModoNotificacion(new NotificadorEnInstante());
     miembroHoracio.setIncidentesSinNotificar(incidentes);
-    //miembroHoracio.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroHoracio.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroHoracio.setComunidadesQueEsMiembro(comunidadesHoracio);
 
 
@@ -1056,7 +1056,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroRoxana.setNotificadorPreferido(new MailNotifier());
     miembroRoxana.setModoNotificacion(new NotificadorEnInstante());
     miembroRoxana.setIncidentesSinNotificar(incidentes);
-    //miembroRoxana.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroRoxana.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroRoxana.setComunidadesQueEsMiembro(comunidadesRoxana);
 
 
@@ -1067,7 +1067,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroCamila.setNotificadorPreferido(new MailNotifier());
     miembroCamila.setModoNotificacion(new NotificadorEnInstante());
     miembroCamila.setIncidentesSinNotificar(incidentes);
-    //miembroCamila.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroCamila.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroCamila.setComunidadesQueEsMiembro(comunidadesCamila);
 
     miembroJulia.setUsuario(buscadorDeUsuarios.buscarUsuario("juliabrito"));
@@ -1077,7 +1077,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroJulia.setNotificadorPreferido(new MailNotifier());
     miembroJulia.setModoNotificacion(new NotificadorEnInstante());
     miembroJulia.setIncidentesSinNotificar(incidentes);
-    //miembroJulia.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroJulia.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroJulia.setComunidadesQueEsMiembro(comunidadesJulia);
 
 
@@ -1088,7 +1088,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroTamara.setNotificadorPreferido(new MailNotifier());
     miembroTamara.setModoNotificacion(new NotificadorEnInstante());
     miembroTamara.setIncidentesSinNotificar(incidentes);
-    //miembroTamara.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroTamara.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroTamara.setComunidadesQueEsMiembro(comunidadesTamara);
 
 
@@ -1099,7 +1099,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroTomas.setNotificadorPreferido(new MailNotifier());
     miembroTomas.setModoNotificacion(new NotificadorEnInstante());
     miembroTomas.setIncidentesSinNotificar(incidentes);
-    //miembroTomas.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroTomas.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroTomas.setComunidadesQueEsMiembro(comunidadesTomas);
 
 
@@ -1110,7 +1110,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroOlga.setNotificadorPreferido(new MailNotifier());
     miembroOlga.setModoNotificacion(new NotificadorEnInstante());
     miembroOlga.setIncidentesSinNotificar(incidentes);
-    //miembroOlga.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroOlga.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroOlga.setComunidadesQueEsMiembro(comunidadesOlga);
 
     miembroJesica.setUsuario(buscadorDeUsuarios.buscarUsuario("jesicalucero"));
@@ -1120,7 +1120,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroJesica.setNotificadorPreferido(new MailNotifier());
     miembroJesica.setModoNotificacion(new NotificadorEnInstante());
     miembroJesica.setIncidentesSinNotificar(incidentes);
-    //miembroJesica.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroJesica.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroJesica.setComunidadesQueEsMiembro(comunidadesJesica);
 
     miembroOctavio.setUsuario(buscadorDeUsuarios.buscarUsuario("octaviogomez"));
@@ -1130,7 +1130,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroOctavio.setNotificadorPreferido(new MailNotifier());
     miembroOctavio.setModoNotificacion(new NotificadorEnInstante());
     miembroOctavio.setIncidentesSinNotificar(incidentes);
-    //miembroOctavio.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroOctavio.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroOctavio.setComunidadesQueEsMiembro(comunidadesOctavio);
 
     miembroAugusto.setUsuario(buscadorDeUsuarios.buscarUsuario("augustolucero"));
@@ -1140,7 +1140,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroAugusto.setNotificadorPreferido(new MailNotifier());
     miembroAugusto.setModoNotificacion(new NotificadorEnInstante());
     miembroAugusto.setIncidentesSinNotificar(incidentes);
-    //miembroAugusto.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroAugusto.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroAugusto.setComunidadesQueEsMiembro(comunidadesAugusto);
 
     miembroSofia.setUsuario(buscadorDeUsuarios.buscarUsuario("sofiacastro"));
@@ -1150,7 +1150,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroSofia.setNotificadorPreferido(new MailNotifier());
     miembroSofia.setModoNotificacion(new NotificadorEnInstante());
     miembroSofia.setIncidentesSinNotificar(incidentes);
-    //miembroSofia.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroSofia.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroSofia.setComunidadesQueEsMiembro(comunidadesSofia);
 
     miembroPaolo.setUsuario(buscadorDeUsuarios.buscarUsuario("paolovega"));
@@ -1160,7 +1160,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroPaolo.setNotificadorPreferido(new MailNotifier());
     miembroPaolo.setModoNotificacion(new NotificadorEnInstante());
     miembroPaolo.setIncidentesSinNotificar(incidentes);
-    //miembroPaolo.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroPaolo.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroPaolo.setComunidadesQueEsMiembro(comunidadesPaolo);
 
     miembroRodrigo.setUsuario(buscadorDeUsuarios.buscarUsuario("rodrigofernandez"));
@@ -1170,7 +1170,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroRodrigo.setNotificadorPreferido(new MailNotifier());
     miembroRodrigo.setModoNotificacion(new NotificadorEnInstante());
     miembroRodrigo.setIncidentesSinNotificar(incidentes);
-    //miembroRodrigo.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroRodrigo.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroRodrigo.setComunidadesQueEsMiembro(comunidadesRodrigo);
 
     miembroCristina.setUsuario(buscadorDeUsuarios.buscarUsuario("cristinatorres"));
@@ -1180,7 +1180,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroCristina.setNotificadorPreferido(new MailNotifier());
     miembroCristina.setModoNotificacion(new NotificadorEnInstante());
     miembroCristina.setIncidentesSinNotificar(incidentes);
-    //miembroCristina.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroCristina.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroCristina.setComunidadesQueEsMiembro(comunidadesCristina);
 
     miembroFernando.setUsuario(buscadorDeUsuarios.buscarUsuario("fernandososa"));
@@ -1190,7 +1190,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroFernando.setNotificadorPreferido(new MailNotifier());
     miembroFernando.setModoNotificacion(new NotificadorEnInstante());
     miembroFernando.setIncidentesSinNotificar(incidentes);
-    //miembroFernando.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroFernando.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroFernando.setComunidadesQueEsMiembro(comunidadesFernando);
 
     miembroVictoria.setUsuario(buscadorDeUsuarios.buscarUsuario("victoriaromero"));
@@ -1200,7 +1200,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroVictoria.setNotificadorPreferido(new MailNotifier());
     miembroVictoria.setModoNotificacion(new NotificadorEnInstante());
     miembroVictoria.setIncidentesSinNotificar(incidentes);
-    //miembroVictoria.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroVictoria.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroVictoria.setComunidadesQueEsMiembro(comunidadesVictoria);
 
     miembroJoaquin.setUsuario(buscadorDeUsuarios.buscarUsuario("joaquingomez"));
@@ -1210,7 +1210,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroJoaquin.setNotificadorPreferido(new MailNotifier());
     miembroJoaquin.setModoNotificacion(new NotificadorEnInstante());
     miembroJoaquin.setIncidentesSinNotificar(incidentes);
-    //miembroJoaquin.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroJoaquin.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroJoaquin.setComunidadesQueEsMiembro(comunidadesJoaquin);
 
     miembroLeticia.setUsuario(buscadorDeUsuarios.buscarUsuario("leticiaperez"));
@@ -1220,7 +1220,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroLeticia.setNotificadorPreferido(new MailNotifier());
     miembroLeticia.setModoNotificacion(new NotificadorEnInstante());
     miembroLeticia.setIncidentesSinNotificar(incidentes);
-    //miembroLeticia.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroLeticia.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroLeticia.setComunidadesQueEsMiembro(comunidadesLeticia);
 
     miembroDiana.setUsuario(buscadorDeUsuarios.buscarUsuario("dianamartinez"));
@@ -1230,7 +1230,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroDiana.setNotificadorPreferido(new MailNotifier());
     miembroDiana.setModoNotificacion(new NotificadorEnInstante());
     miembroDiana.setIncidentesSinNotificar(incidentes);
-    //miembroDiana.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroDiana.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroDiana.setComunidadesQueEsMiembro(comunidadesDiana);
 
     miembroLuis.setUsuario(buscadorDeUsuarios.buscarUsuario("luisgodoy"));
@@ -1240,7 +1240,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroLuis.setNotificadorPreferido(new MailNotifier());
     miembroLuis.setModoNotificacion(new NotificadorEnInstante());
     miembroLuis.setIncidentesSinNotificar(incidentes);
-    //miembroLuis.asingarLocalizacion("Mendoza",localizadorProvincia);
+    miembroLuis.asingarLocalizacion("Mendoza",localizadorProvincia);
     miembroLuis.setComunidadesQueEsMiembro(comunidadesLuis);
 
     miembroNatalia.setUsuario(buscadorDeUsuarios.buscarUsuario("nataliaruiz"));
@@ -1250,7 +1250,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroNatalia.setNotificadorPreferido(new MailNotifier());
     miembroNatalia.setModoNotificacion(new NotificadorEnInstante());
     miembroNatalia.setIncidentesSinNotificar(incidentes);
-    //miembroNatalia.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroNatalia.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroNatalia.setComunidadesQueEsMiembro(comunidadesNatalia);
 
     miembroCeleste.setUsuario(buscadorDeUsuarios.buscarUsuario("celestepalma"));
@@ -1260,7 +1260,7 @@ public class Initializer implements WithSimplePersistenceUnit {
     miembroCeleste.setNotificadorPreferido(new MailNotifier());
     miembroCeleste.setModoNotificacion(new NotificadorEnInstante());
     miembroCeleste.setIncidentesSinNotificar(incidentes);
-    //miembroCeleste.asingarLocalizacion("Buenos Aires",localizadorProvincia);
+    miembroCeleste.asingarLocalizacion("Buenos Aires",localizadorProvincia);
     miembroCeleste.setComunidadesQueEsMiembro(comunidadesCeleste);
 
 

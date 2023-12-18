@@ -32,7 +32,8 @@ public class Entidad extends Persistente {
   private Localizacion localizacion;
 
 
-  @OneToMany(cascade = CascadeType.ALL)
+  //@OneToMany(cascade = CascadeType.ALL)
+  @OneToMany()
   @JoinColumn(name = "entidad_id", referencedColumnName = "id")
   private List<Establecimiento> establecimientos;
 
@@ -40,7 +41,8 @@ public class Entidad extends Persistente {
   private TipoEntidad tipo_entidad;
 
 
-  @OneToMany(cascade = CascadeType.ALL)
+  //@OneToMany(cascade = CascadeType.ALL)
+  @OneToMany
   @JoinColumn(name = "entidad_id", referencedColumnName = "id")
   private List<Incidente> incidentes;
 
@@ -83,8 +85,10 @@ public class Entidad extends Persistente {
 
   public double promedioCierreIncidentesEnMinutos(){
     List<Incidente> incidentesCerrados =  this.incidentesDeLaSemana().stream().filter(i->!i.getEstaAbierto()).collect(Collectors.toList());
-    operadorFechas calculador =new operadorFechas();
-    return ((calculador.promedioDiasTotales(incidentesCerrados)*24*60) + (calculador.promedioHorasTotales(incidentesCerrados)*60)+calculador.promedioMinutosTotales(incidentesCerrados));
+    operadorFechas calculador = new operadorFechas();
+    double resultado = ((calculador.promedioDiasTotales(incidentesCerrados)*24*60) + (calculador.promedioHorasTotales(incidentesCerrados)*60)+calculador.promedioMinutosTotales(incidentesCerrados));
+    System.out.println(resultado + " " + "RESULTADO DEL PROMEDIOOOOOOOOO");
+    return resultado;
   }
 
 
@@ -98,8 +102,10 @@ public class Entidad extends Persistente {
   }
   public List<Incidente> incidentesDeLaSemana(){
     Calendar calendar = Calendar.getInstance();
-    int semanaDelAnioActual = calendar.get(Calendar.WEEK_OF_YEAR);
-    return  this.incidentes.stream().filter(i->i.getFechaApertura().get(WeekFields.ISO.weekOfYear())==semanaDelAnioActual).collect(Collectors.toList());
+    int semanaDelAnioActual = calendar.get(Calendar.WEEK_OF_YEAR) - 1;
+    List<Incidente> incidentesFiltrados = this.incidentes.stream().filter(i->i.getFechaApertura().get(WeekFields.ISO.weekOfYear())==semanaDelAnioActual).collect(Collectors.toList());
+    //System.out.println(incidentes.get(0).getFechaApertura().get(WeekFields.ISO.weekOfYear()) + "SEMANA DEL INCIDENTE");
+    return  incidentesFiltrados;
   }
 
   public Localizacion getLocalizacionAsignada() {
@@ -140,6 +146,15 @@ public class Entidad extends Persistente {
   }
 
 
+  public Localizacion getLocalizacion() {
+    return localizacion;
+  }
 
+  public TipoEntidad getTipo_entidad() {
+    return tipo_entidad;
+  }
 
+  public List<Incidente> getIncidentes() {
+    return incidentes;
+  }
 }

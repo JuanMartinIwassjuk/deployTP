@@ -55,6 +55,7 @@ public class UsuarioController implements ICrudViewsHandler {
       context.sessionAttribute("user_rol", null);
       context.sessionAttribute("tipo_rol", null);
       context.sessionAttribute("user_id", null);
+      context.sessionAttribute("comunidad_id",null);
       context.redirect("/iniciarsesion");
 
 

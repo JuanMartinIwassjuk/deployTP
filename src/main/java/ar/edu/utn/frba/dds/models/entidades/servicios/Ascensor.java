@@ -12,11 +12,13 @@ import javax.persistence.ManyToOne;
 
 public class Ascensor extends Servicio {
 
-  @ManyToOne(cascade = CascadeType.ALL)
+  //@ManyToOne(cascade = CascadeType.ALL)
+  @ManyToOne(cascade = CascadeType.MERGE)
   @JoinColumn()
   private Tramo calle_acceso;
 
-  @ManyToOne(cascade = CascadeType.ALL)
+  //@ManyToOne(cascade = CascadeType.ALL)
+  @ManyToOne(cascade = CascadeType.MERGE)
   @JoinColumn()
   private Tramo acceso_anden;
 

@@ -16,10 +16,12 @@ public class OrganismoDeControl extends Persistente {
   @Column(name = "nombre_organismo")
   private String nombre_organismo;
 
+  //@OneToOne(cascade = CascadeType.ALL)
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "empresa_prestadora_id", referencedColumnName = "id")
   private EmpresaPrestadora empresa_prestadora;
 
+  //@OneToOne(cascade = CascadeType.ALL)
   @OneToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "miembro_id", referencedColumnName = "id")
   private Miembro usuario_designado;

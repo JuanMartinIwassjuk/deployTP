@@ -5,14 +5,14 @@
 }
 h1{
     text-align: center;
-    background-color: rgb(95, 141, 78);
+    background-color: rgba(238, 77, 77, 0.78);
     color: rgb(229, 217, 182);
     padding: 20px;
 }
 
 body{
     /*background-image:url('https://i0.wp.com/medioambienteynaturaleza.com/wp-content/uploads/2015/06/Fondos-de-pantalla-de-paisajes-naturales23.jpg?fit=1920%2C1080&ssl=1');*/
-    background-color: rgb(229, 217, 182);
+    background-color: #fe8e5e;
     font-family: sans-serif;
     font-weight: 100;
 }
@@ -27,7 +27,7 @@ nav li{
 }
 nav a{
     text-decoration: none;
-    color: rgb(229, 217, 182);
+    color: #000;
     padding: 8px;
     width: 150px;
 }
@@ -54,7 +54,7 @@ p{
 #incidentesDiv{
     text-align: center;
     width: 1000px;
-    background-color: rgb(95, 141, 78);
+    background-color: rgba(238, 77, 77, 0.78);
     border:solid black;
     padding: 2px;
     margin: auto;

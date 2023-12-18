@@ -20,10 +20,12 @@ import java.util.List;
 @Table(name = "prestacion")
 public class Prestacion extends Persistente {
 
+  //@ManyToOne(cascade = CascadeType.ALL)
   @ManyToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "servicio_id", referencedColumnName = "id")
   Servicio servicio;
 
+  //@ManyToOne(cascade = CascadeType.ALL)
   @ManyToOne(cascade = CascadeType.ALL)
   @JoinColumn(name = "establecimiento_id", referencedColumnName = "id")
   Establecimiento establecimiento;
@@ -32,10 +34,12 @@ public class Prestacion extends Persistente {
   EstadoServicio estado_servicio;
 
 
+  //@OneToMany(cascade = CascadeType.ALL)
   @OneToMany(cascade = CascadeType.ALL)
   @JoinColumn(name = "prestacion_id", referencedColumnName = "id")
   List<Incidente> incidentes;
 
+  //@ManyToMany(cascade = CascadeType.ALL)
   @ManyToMany(cascade = CascadeType.ALL)
   List<Comunidad> comunidades_interesadas;
 

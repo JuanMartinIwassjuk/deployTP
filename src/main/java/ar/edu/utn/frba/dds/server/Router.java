@@ -23,20 +23,23 @@ public class Router {
     Server.app().routes(() -> {
       get("/",((MenuController) FactoryController.controller("Menu"))::index);
       get("/menu", ((UsuarioController) FactoryController.controller("Usuarios"))::cerrarLogin);
-      //get("/menu", context -> context.render("Menu_Inicio.hbs"));
       get("/iniciarsesion", ((SesionController) FactoryController.controller("Sesiones"))::show);
       post("/iniciarsesion", ((SesionController) FactoryController.controller("Sesiones"))::create);
-      get("/incidentesenlocalizacion", ((IncidenteController) FactoryController.controller("Incidentes"))::mostrarIncidentePorLocalizacionDeUsuario);
-      get("incidentesAbiertos", ((IncidenteController) FactoryController.controller("Incidentes"))::mostrarIncidentePorMiembroAsociado);
-      post("/cerrarIncidentes", ((IncidenteController) FactoryController.controller("Incidentes"))::cerrarIncidentes);
+      get("/incidentesenlocalizacion", ((IncidenteController) FactoryController.controller("Incidentes"))::incidentesPorLocalizacion);
       get("/incidentes/nuevo",((IncidenteController) FactoryController.controller("Incidentes"))::show);
       post("/incidentes/nuevo",((IncidenteController) FactoryController.controller("Incidentes"))::create);
-      get("/cargaOrganismos", ((OrganismosController) FactoryController.controller("Organismos"))::show, TipoRol.ADMINISTRADOR);
-      post("/cargaOrganismos", ((OrganismosController) FactoryController.controller("Organismos"))::cargaCSV, TipoRol.ADMINISTRADOR);
+      get("/cargaOrganismos", ((OrganismosController) FactoryController.controller("Organismos"))::show);
+      post("/cargaOrganismos", ((OrganismosController) FactoryController.controller("Organismos"))::cargaCSV);
       get("/organismos", ((OrganismosController) FactoryController.controller("Organismos"))::listadoOrganismos);
       get("/rankings", ((EntidadesController) FactoryController.controller("Rankings"))::index);
-      get("/miembros", ((MiembrosController) FactoryController.controller("Miembros"))::show, TipoRol.ADMINISTRADOR);
+      get("/miembros", ((MiembrosController) FactoryController.controller("Miembros"))::show);
       post("/menu", ((UsuarioController) FactoryController.controller("Usuarios"))::create);
+      get("/comunidades",((MenuController) FactoryController.controller("Menu"))::mostrarComunidades);
+      post("/comunidades",((MenuController) FactoryController.controller("Menu"))::create);
+      get("/incidentes", ((IncidenteController) FactoryController.controller("Incidentes"))::listadoIncidentes);
+      post("/incidentes", ((IncidenteController) FactoryController.controller("Incidentes"))::detalleIncidente);
+      get("/incidentes/{id}/detalle", ((IncidenteController) FactoryController.controller("Incidentes"))::detalleIncidente);
+      post("/incidentes/{id}/detalle", ((IncidenteController) FactoryController.controller("Incidentes"))::cerrarIncidente);
 
 
     });

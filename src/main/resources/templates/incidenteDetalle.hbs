@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="/css/reset.css">
+    <link rel="stylesheet" type="text/css" href="/css/estilosIncidenteDetalle.css">
+    <title>MENU</title>
+    <meta charset="UTF-8">
+</head>
+
+<body>
+{{#each incidenteDetalle}}
+    <form method=POST action="/incidentes/{{id}}/detalle">
+    <div class="div">
+        <div class="div-2">
+            <div class="div-3">
+                <a href='/'><img
+                        loading="lazy"
+                        srcset="/img/iconoMenu.svg"
+                        class="img"
+                /></a>
+
+                <a href='/menu'><img
+                        loading="lazy"
+                        srcset="/img/iconoPerfil.svg"
+                        class="img-2"
+                /></a>
+
+            </div>
+        </div>
+            <div class="div-111">Detalles del Incidente:</div>
+            <div class="div-444">
+                <div class="div-555">Titulo: {{this.titulo}}</div>
+                <div class="div-666">Descripcion: {{this.detalle}}</div>
+                <div class="div-777">Fecha de apertura: {{this.fecha_apertura}}</div>
+                <div class="div-888">Servicio: {{this.prestacion.servicio.getNombreServicio}}</div>
+                <div class="div-999">Establecimiento: {{this.prestacion.establecimiento.nombre}}</div>
+                <div class="div-1010">Estado: {{this.getEstaAbierto}}</div>
+                <div class="div-1111">Afectados: {{this.cantidad_afectados}}</div>
+            </div>
+            {{/each}}
+            <div class="div-1212">
+                <button type="submit">Cerrar Incidente</button>
+            </div>
+        </div>
+    </form>
+    </body>
+
+    </html>
+
+

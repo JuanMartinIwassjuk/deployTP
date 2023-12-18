@@ -4,7 +4,7 @@ import ar.edu.utn.frba.dds.models.entidades.common.Usuario;
 import java.util.Objects;
 
 public class MailNotifier implements Notificador {
-/*
+
   MailSender mailSender;
 
   @Override
@@ -16,7 +16,7 @@ public class MailNotifier implements Notificador {
     this.mailSender = mailSender;
   }
 
- */
+ /*
   MailSender mailSender;
 
   @Override
@@ -39,4 +39,6 @@ public class MailNotifier implements Notificador {
   public int hashCode() {
     return Objects.hash(mailSender);
   }
+
+  */
 }
